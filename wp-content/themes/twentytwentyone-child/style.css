@@ -6,5 +6,5 @@ Template: twentytwentyone
 Version: 1
 */
 
-@import url(./styles/wrapper.css);
+@import url(./styles/general/general.css);
 @import url(./styles/components/components.css);

@@ -26,6 +26,52 @@ $accueil_introduction =  $champs_accueil['accueil_introduction'];
     <?php
 
 
+
+$args = [
+    'posts_per_page'    => -1,
+    'post_type'     => 'article',
+];
+
+// query
+$the_query = new WP_Query( $args );
+
+if( $the_query->have_posts() ):
+
+
+?>
+
+<section class="catalog_container">
+    <?php while( $the_query->have_posts() ) : $the_query->the_post();
+    $articles = get_fields();
+    $article_image = $articles['article_image'];
+    $article_categorie = $articles['article_categorie'];
+    $article_description = $articles['article_description']; 
+    $article_prix = $articles['article_prix'];
+    $article_actif = $articles['article_actif'];
+
+    
+   
+    ?>
+    
+    <div class="carte-article">
+        <div class="article-image">
+            <a href="<?php the_permalink(); ?>">
+                <img src="<?= $article_image; ?>" />
+            </a>
+        </div>
+        <p class="article-titre"><?php the_title(); ?></p>
+        <div class="link-wrapper">
+            <a class="link-btn" href="<?php the_permalink(); ?>">Voir plus</a>
+        </div>
+    </div>
+    <?php endwhile; ?>
+</section>
+<?php endif; ?>
+
+<?php wp_reset_query(); 
+
+
+
 get_footer();
 
 
