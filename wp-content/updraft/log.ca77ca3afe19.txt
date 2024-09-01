@@ -1,0 +1,119 @@
+0000.006 () Opened log file at time: Sun, 01 Sep 2024 15:03:45 +0000 on http://localhost/lecreuset-tp2
+0000.008 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.24.4 WP: 6.5.4 PHP: 8.2.18 (apache2handler, Windows NT DESKTOP-7NL96UA 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.3.0 (max packet size=67108864) WPLANG: en_CA Server: Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.9M | 6M) multisite: N openssl: OpenSSL 3.0.13 30 Jan 2024 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.008 () Free space on disk containing Updraft's temporary directory: 248799.3 MB
+0000.035 () Restore setup, now closing connection and starting restore over AJAX.
+0000.005 () Opened log file at time: Sun, 01 Sep 2024 15:03:46 +0000 on http://localhost/lecreuset-tp2
+0000.005 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.24.4 WP: 6.5.4 PHP: 8.2.18 (apache2handler, Windows NT DESKTOP-7NL96UA 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.3.0 (max packet size=67108864) WPLANG: en_CA Server: Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 3.7M | 6M) multisite: N openssl: OpenSSL 3.0.13 30 Jan 2024 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.005 () Free space on disk containing Updraft's temporary directory: 248799.3 MB
+0000.007 () Ensuring WP_Filesystem is setup for a restore
+0000.009 () WP_Filesystem is setup and ready for a restore
+0000.035 () Restore job started. Entities to restore: plugins, themes, uploads, others, db. Restore options: {"include_unspecified_tables":false,"tables_to_restore":["wp_options","wp_users","wp_usermeta","wp_commentmeta","wp_comments","wp_links","wp_postmeta","wp_posts","wp_term_relationships","wp_term_taxonomy","wp_termmeta","wp_terms"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.051 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\wamp64\www\lecreuset-tp2\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.079 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.082 () Entity: db
+0000.082 () restore_backup(backup_file=backup_2024-09-01-1100_Le_Creuset_55dce803ff28-db.gz, type=db, info=a:0:{}, last_one=)
+0000.083 () Unpacking backup... (backup_2024-09-01-1100_Le_Creuset_55dce803ff28-db.gz, 0.2 Mb)
+0000.083 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\wamp64\www\lecreuset-tp2\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.086 () Database successfully unpacked
+0000.087 () Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.087 () Using direct MySQL access; value of use_mysqli is: 1
+0000.088 () SQL compatibility mode is: NO_AUTO_VALUE_ON_ZERO,
+0000.155 () Max packet size: 64 MB
+0000.155 () Entering maintenance mode
+0000.155 () Enabling Maintenance mode&#8230;
+0000.209 () Backup of: http://localhost/lecreuset-tp2
+0000.212 () Content URL: http://localhost/lecreuset-tp2/wp-content
+0000.212 () Uploads URL: http://localhost/lecreuset-tp2/wp-content/uploads
+0000.212 () Old table prefix: wp_
+0000.212 () UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0000.213 () Site information: multisite=0
+0000.213 () Site information: sql_mode=
+0000.218 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+0000.218 () New table prefix: mn_
+0000.223 () Processing table (MyISAM): wp_options - will restore as: mn_options
+0000.256 () Atomic restore: dropping original table (wp_options)
+0000.264 () Atomic restore: renaming new table (mn_options) to final table name (wp_options)
+0000.272 () Restoring prior UD configuration (table: wp_options; keys: 4)
+0000.289 () Processing table (MyISAM): wp_users - will restore as: mn_users
+0000.306 () Atomic restore: dropping original table (wp_users)
+0000.312 () Atomic restore: renaming new table (mn_users) to final table name (wp_users)
+0000.321 () Processing table (MyISAM): wp_usermeta - will restore as: mn_usermeta
+0000.334 () Atomic restore: dropping original table (wp_usermeta)
+0000.340 () Atomic restore: renaming new table (mn_usermeta) to final table name (wp_usermeta)
+0000.348 () Processing table (MyISAM): wp_commentmeta - will restore as: mn_commentmeta
+0000.362 () Atomic restore: dropping original table (wp_commentmeta)
+0000.365 () Atomic restore: renaming new table (mn_commentmeta) to final table name (wp_commentmeta)
+0000.372 () Processing table (MyISAM): wp_comments - will restore as: mn_comments
+0000.384 () Atomic restore: dropping original table (wp_comments)
+0000.399 () Atomic restore: renaming new table (mn_comments) to final table name (wp_comments)
+0000.407 () Processing table (MyISAM): wp_links - will restore as: mn_links
+0000.422 () Atomic restore: dropping original table (wp_links)
+0000.428 () Atomic restore: renaming new table (mn_links) to final table name (wp_links)
+0000.441 () Processing table (MyISAM): wp_postmeta - will restore as: mn_postmeta
+0000.458 () Atomic restore: dropping original table (wp_postmeta)
+0000.465 () Atomic restore: renaming new table (mn_postmeta) to final table name (wp_postmeta)
+0000.471 () Processing table (MyISAM): wp_posts - will restore as: mn_posts
+0000.491 () Atomic restore: dropping original table (wp_posts)
+0000.504 () Atomic restore: renaming new table (mn_posts) to final table name (wp_posts)
+0000.514 () Processing table (MyISAM): wp_term_relationships - will restore as: mn_term_relationships
+0000.529 () Atomic restore: dropping original table (wp_term_relationships)
+0000.533 () Atomic restore: renaming new table (mn_term_relationships) to final table name (wp_term_relationships)
+0000.540 () Processing table (MyISAM): wp_term_taxonomy - will restore as: mn_term_taxonomy
+0000.556 () Atomic restore: dropping original table (wp_term_taxonomy)
+0000.564 () Atomic restore: renaming new table (mn_term_taxonomy) to final table name (wp_term_taxonomy)
+0000.576 () Processing table (MyISAM): wp_termmeta - will restore as: mn_termmeta
+0000.586 () Atomic restore: dropping original table (wp_termmeta)
+0000.590 () Atomic restore: renaming new table (mn_termmeta) to final table name (wp_termmeta)
+0000.596 () Processing table (MyISAM): wp_terms - will restore as: mn_terms
+0000.606 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+0000.633 () Unlocking database and leaving maintenance mode
+0000.633 () Disabling Maintenance mode&#8230;
+0000.634 () Atomic restore: dropping original table (wp_terms)
+0000.638 () Atomic restore: renaming new table (mn_terms) to final table name (wp_terms)
+0000.645 () Finished: lines processed: 44 in 0.55 seconds
+0000.646 () Cleaning up rubbish...
+0000.647 () Begin search and replace (updraftplus_restored_db)
+0000.648 () [Database-replace-site-url] Database: search and replace site URL
+0000.648 () This option was not selected.
+0000.656 () Entity: plugins
+0000.656 () restore_backup(backup_file=backup_2024-09-01-1100_Le_Creuset_55dce803ff28-plugins.zip, type=plugins, info=a:3:{s:4:"path";s:46:"C:\wamp64\www\lecreuset-tp2/wp-content/plugins";s:11:"description";s:7:"Plugins";s:20:"singular_description";s:6:"Plugin";}, last_one=)
+0000.656 () Unpacking backup... (backup_2024-09-01-1100_Le_Creuset_55dce803ff28-plugins.zip, 7.4 MB)
+0000.659 () Unzipping backup_2024-09-01-1100_Le_Creuset_55dce803ff28-plugins.zip to C:/wamp64/www/lecreuset-tp2/wp-content/upgrade/3925e7e4/ using UpdraftPlus_ZipArchive, starting index 0
+0001.476 () Unzip progress: 1002 out of 1474 files (21.8 MB, plugins/updraftplus/vendor/guzzle/guzzle/src/Guzzle/Service/Exception/ValidationException.php)
+0001.791 () Unzip progress: 1474 out of 1474 files (25 MB, plugins/updraftplus/vendor/team-updraft/common-libs/src/updraft-tasks/class-updraft-tasks-activation.php)
+0001.794 () Moving old data: filesystem method / updraft_dir is potentially possible
+0001.794 () Moving old data: can potentially use wp_filesystem method / -old
+0001.794 () Moving old data out of the way...
+0002.032 () Top-level entities being moved: akismet, hello.php, index.php, updraftplus
+0002.095 () Moving unpacked backup into place...
+0002.329 () Top-level entities being moved: akismet, hello.php, index.php, updraftplus
+0002.336 () Cleaning up rubbish...
+0002.338 () Entity: themes
+0002.338 () restore_backup(backup_file=backup_2024-09-01-1100_Le_Creuset_55dce803ff28-themes.zip, type=themes, info=a:3:{s:4:"path";s:45:"C:\wamp64\www\lecreuset-tp2/wp-content/themes";s:11:"description";s:6:"Themes";s:20:"singular_description";s:5:"Theme";}, last_one=)
+0002.339 () Unpacking backup... (backup_2024-09-01-1100_Le_Creuset_55dce803ff28-themes.zip, 10.9 MB)
+0002.340 () Unzipping backup_2024-09-01-1100_Le_Creuset_55dce803ff28-themes.zip to C:/wamp64/www/lecreuset-tp2/wp-content/upgrade/0cacdd5f/ using UpdraftPlus_ZipArchive, starting index 0
+0002.610 () Unzip progress: 330 out of 330 files (12.1 MB, themes/twentytwentytwo/theme.json)
+0002.613 () Moving old data: filesystem method / updraft_dir is potentially possible
+0002.614 () Moving old data: can potentially use wp_filesystem method / -old
+0002.614 () Moving old data out of the way...
+0002.664 () Top-level entities being moved: index.php, twentytwentyfour, twentytwentythree, twentytwentytwo
+0002.671 () Moving unpacked backup into place...
+0002.728 () Top-level entities being moved: index.php, twentytwentyfour, twentytwentythree, twentytwentytwo
+0002.732 () Cleaning up rubbish...
+0002.735 () Entity: uploads
+0002.736 () restore_backup(backup_file=backup_2024-09-01-1100_Le_Creuset_55dce803ff28-uploads.zip, type=uploads, info=a:2:{s:4:"path";s:46:"C:\wamp64\www\lecreuset-tp2/wp-content/uploads";s:11:"description";s:7:"Uploads";}, last_one=)
+0002.736 () Unpacking backup... (backup_2024-09-01-1100_Le_Creuset_55dce803ff28-uploads.zip, 0 MB)
+0002.737 () Unzipping backup_2024-09-01-1100_Le_Creuset_55dce803ff28-uploads.zip to C:/wamp64/www/lecreuset-tp2/wp-content/upgrade/3164f474/ using UpdraftPlus_ZipArchive, starting index 0
+0002.742 () Moving old data: filesystem method / updraft_dir is potentially possible
+0002.743 () Moving old data: can potentially use wp_filesystem method / -old
+0002.743 () Moving old data out of the way...
+0002.745 () Moving unpacked backup into place...
+0002.748 () Cleaning up rubbish...
+0002.751 () Entity: others
+0002.751 () restore_backup(backup_file=backup_2024-09-01-1100_Le_Creuset_55dce803ff28-others.zip, type=others, info=a:2:{s:4:"path";s:38:"C:\wamp64\www\lecreuset-tp2/wp-content";s:11:"description";s:6:"Others";}, last_one=1)
+0002.751 () Unpacking backup... (backup_2024-09-01-1100_Le_Creuset_55dce803ff28-others.zip, 0.8 MB)
+0002.752 () Unzipping backup_2024-09-01-1100_Le_Creuset_55dce803ff28-others.zip to C:/wamp64/www/lecreuset-tp2/wp-content/upgrade/94bb5d4f/ using UpdraftPlus_ZipArchive, starting index 0
+0002.821 () Unzip progress: 81 out of 81 files (3.5 MB, languages/themes/twentytwentytwo-en_CA.po)
+0002.827 () Cleaning up rubbish...
+0002.859 () Restore successful!
+0002.859 () Restore successful

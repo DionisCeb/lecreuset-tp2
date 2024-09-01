@@ -1,0 +1,15 @@
+0000.006 () Opened log file at time: Sun, 01 Sep 2024 15:18:54 +0000 on http://localhost/lecreuset-tp2
+0000.007 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.24.4 WP: 6.5.4 PHP: 8.2.18 (apache2handler, Windows NT DESKTOP-7NL96UA 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.3.0 (max packet size=67108864) WPLANG: en_CA Server: Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.9M | 6M) multisite: N openssl: OpenSSL 3.0.13 30 Jan 2024 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.008 () Free space on disk containing Updraft's temporary directory: 248449.5 MB
+0000.088 () Restore setup, now closing connection and starting restore over AJAX.
+0000.010 () Opened log file at time: Sun, 01 Sep 2024 15:18:55 +0000 on http://localhost/lecreuset-tp2
+0000.011 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.24.4 WP: 6.5.4 PHP: 8.2.18 (apache2handler, Windows NT DESKTOP-7NL96UA 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.3.0 (max packet size=67108864) WPLANG: en_CA Server: Apache/2.4.59 (Win64) PHP/8.2.18 mod_fcgid/2.3.10-dev safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 3.7M | 4M) multisite: N openssl: OpenSSL 3.0.13 30 Jan 2024 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.011 () Free space on disk containing Updraft's temporary directory: 248449.4 MB
+0000.013 () Ensuring WP_Filesystem is setup for a restore
+0000.016 () WP_Filesystem is setup and ready for a restore
+0000.022 () Restore job started. Entities to restore: plugins, themes, uploads, others, db. Restore options: {"updraft_restorer_replacesiteurl":"1","include_unspecified_tables":false,"tables_to_restore":["wp_options","wp_users","wp_usermeta","wp_commentmeta","wp_comments","wp_links","wp_postmeta","wp_posts","wp_term_relationships","wp_term_taxonomy","wp_termmeta","wp_terms"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.025 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\wamp64\www\lecreuset-tp2\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.029 () Error message: Existing unremoved folders from a previous restore exist (please use the "Delete old folders" button to delete them before trying again): C:\wamp64\www\lecreuset-tp2/wp-content/updraft/plugins-old
+0000.033 () Restore failed...
+0000.033 () Error message: Existing unremoved folders from a previous restore exist (please use the "Delete old folders" button to delete them before trying again): C:\wamp64\www\lecreuset-tp2/wp-content/updraft/plugins-old
+0000.033 () Restore failed

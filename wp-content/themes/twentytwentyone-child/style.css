@@ -1,0 +1,10 @@
+/*
+Theme Name: Twenty Twenty-One Child
+Description: Twenty Twenty-One Child Theme
+Author: Dionis Cebanu
+Template: twentytwentyone
+Version: 1
+*/
+
+@import url(./styles/wrapper.css);
+@import url(./styles/components/components.css);
