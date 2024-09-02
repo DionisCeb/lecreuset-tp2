@@ -1,0 +1,11 @@
+.catalog_section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+    gap: 20px; /* Space between grid items */
+}
+
+.carte {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border: 1px solid #ddd; /* Optional border */
+}
