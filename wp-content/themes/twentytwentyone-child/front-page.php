@@ -40,34 +40,85 @@ if( $the_query->have_posts() ):
 
 ?>
 
-<section class="catalog_container">
-    <?php while( $the_query->have_posts() ) : $the_query->the_post();
-    $articles = get_fields();
-    $article_image = $articles['article_image'];
-    $article_categorie = $articles['article_categorie'];
-    $article_description = $articles['article_description']; 
-    $article_prix = $articles['article_prix'];
-    $article_actif = $articles['article_actif'];
+<main class="accueil-articles-section">
+    <!-- Section Vaisselle -->
+    <h2>Vaisselle</h2>
 
-    
-   
-    ?>
-    
-    <div class="carte-article">
-        <div class="article-image">
-            <a href="<?php the_permalink(); ?>">
-                <img src="<?= $article_image; ?>" />
-            </a>
+    <div class="catalog_container">
+        <?php
+        $vaissele_aticles_afficher = false;
+        $vaisselle_compteur_afficher = 0;
+        while( $the_query->have_posts() ) : $the_query->the_post();
+        $articles = get_fields();
+        $article_image = $articles['article_image'];
+        $article_categorie = $articles['article_categorie'];
+        $article_description = $articles['article_description'];
+        $article_prix = $articles['article_prix'];
+        $article_actif = $articles['article_actif'];
+        //Afficher les articles avec la categorie "Vaisselle"
+        if (((is_array($article_categorie) && in_array('Vaisselle', $article_categorie)) || $article_categorie === 'Vaisselle') && $vaisselle_compteur_afficher < 5) {
+            $vaissele_aticles_afficher = true;
+            //compteur jusqu'a 5 articles per ligne
+            $vaisselle_compteur_afficher++;
+        ?>
+        
+        <div class="carte-article">
+            <div class="article-image">
+                <a href="<?php the_permalink(); ?>">
+                    <img src="<?= $article_image; ?>" />
+                </a>
+            </div>
+            <p class="article-titre"><?php the_title(); ?></p>
+            <div class="link-wrapper">
+                <a class="link-btn" href="<?php the_permalink(); ?>">Voir plus</a>
+            </div>
         </div>
-        <p class="article-titre"><?php the_title(); ?></p>
-        <div class="link-wrapper">
-            <a class="link-btn" href="<?php the_permalink(); ?>">Voir plus</a>
-        </div>
+        <?php
+        }
+        endwhile;
+        ?>
     </div>
-    <?php endwhile; ?>
-</section>
-<?php endif; ?>
 
+    <!-- Section Service -->
+    <h2>Service</h2>
+
+    <div class="catalog_container">
+        <?php
+        $services_aticles_afficher = false;
+        $service_compteur_afficher = 0;
+        while( $the_query->have_posts() ) : $the_query->the_post();
+        $articles = get_fields();
+        $article_image = $articles['article_image'];
+        $article_categorie = $articles['article_categorie'];
+        $article_description = $articles['article_description'];
+        $article_prix = $articles['article_prix'];
+        $article_actif = $articles['article_actif'];
+        //Afficher les articles avec la categorie "Service"
+        if (((is_array($article_categorie) && in_array('Service', $article_categorie)) || $article_categorie === 'Service')&& $service_compteur_afficher < 5) {
+            $services_aticles_afficher = true;
+            $service_compteur_afficher++;
+        ?>
+        
+        <div class="carte-article">
+            <div class="article-image">
+                <a href="<?php the_permalink(); ?>">
+                    <img src="<?= $article_image; ?>" />
+                </a>
+            </div>
+            <p class="article-titre"><?php the_title(); ?></p>
+            <div class="link-wrapper">
+                <a class="link-btn" href="<?php the_permalink(); ?>">Voir plus</a>
+            </div>
+        </div>
+        <?php
+        }
+        endwhile;
+        ?>
+    </div>
+</main>
+
+
+<?php endif; ?>
 <?php wp_reset_query(); 
 
 
