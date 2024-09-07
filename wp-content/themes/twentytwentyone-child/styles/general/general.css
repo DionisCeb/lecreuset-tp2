@@ -8,6 +8,29 @@ img {
 }
 
 ul {
+    margin-top: 20px;
     margin-left: 20px;
     padding: 0;
 }
+
+a {
+    text-decoration: none;
+}
+
+header.introduction-header {
+    margin-bottom: 0;
+}
+
+main.accueil-articles-section {
+    margin-top: 0;
+}
+
+.contenu p img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+
+
+

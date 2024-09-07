@@ -8,17 +8,20 @@
 <?php
 $champs_service = get_fields();
 $service_image_bg =  $champs_service['service_image_bg'];
+if ( ! $service_image_bg ) {
+    $service_image_bg = get_template_directory_uri() . '/assets/images/le-creuset-bg-par-defaut.jpg';
+}
 $service_introduction =  $champs_service['service_introduction'];
 ?>
 <header class="introduction-header">
-    <div class="intro">
+    <div class="intro height40">
         <?php if( $service_image_bg ) : ?>
             <div class="bg-image-container">
                 <img class="bg-image" src="<?php echo esc_html($service_image_bg); ?>" alt="Random PHP" />
             </div>
         <?php endif; ?>
         <?php if( $service_introduction ) : ?>
-            <h2><?php echo esc_html($service_introduction); ?></h2>
+            <h2 class="h2-left"><?php echo esc_html($service_introduction); ?></h2>
         <?php endif; ?>
     </div>
     </header>
@@ -38,7 +41,7 @@ if( $the_query->have_posts() ):
 
 ?>
 
-<main class="flex-center">
+<main class="catalog-main flex-center">
     <div class="structure90">
         <h2><?php the_title(); ?></h2>
         <section class="catalog_section">
@@ -63,10 +66,10 @@ if( $the_query->have_posts() ):
                         <img src="<?= $article_image; ?>" />
                     </a>
                 </div>
-                <p class="article-titre"><?php the_title(); ?></p>
-                <div class="link-wrapper">
-                    <a class="link-btn" href="<?php the_permalink(); ?>">Voir plus</a>
-                </div>
+                <a href="<?php the_permalink(); ?>">
+                    <p class="article-titre"><?php the_title(); ?></p>
+                </a>
+                
             </div>
             <?php
             }

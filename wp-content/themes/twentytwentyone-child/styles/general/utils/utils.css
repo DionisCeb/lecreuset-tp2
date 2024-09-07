@@ -1,6 +1,46 @@
+.flex {
+    display: flex;
+}
 .flex-center {
     display: flex;
     justify-content: center;
+}
+
+.flex-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-col-center-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gap10 {
+    gap: 10px;
+}
+.gap20 {
+    gap: 20px;
+}
+.gap30 {
+    gap: 30px;
+}
+.gap40 {
+    gap: 40px;
+}
+.gap50 {
+    gap: 50px;
+}
+.gap60 {
+    gap: 60px;
 }
 
 /*structure*/
@@ -10,4 +50,41 @@
 
 .structure90 {
     width: 90%;
+}
+
+
+.height100 {
+    min-height: 100vh;
+}
+.height90 {
+    min-height: 90vh;
+}
+.height80 {
+    min-height: 80vh;
+}
+.height70 {
+    min-height: 70vh;
+}
+.height60 {
+    min-height: 60vh;
+}
+.height50 {
+    min-height: 50vh;
+}
+.height40 {
+    min-height: 40vh;
+}
+.height30 {
+    min-height: 30vh;
+}
+
+/*padding*/
+.padding10 {
+    padding: 10px;
+}
+.padding20 {
+    padding: 20px;
+}
+.padding30 {
+    padding: 30px;
 }
