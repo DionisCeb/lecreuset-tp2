@@ -2,6 +2,7 @@
     background-color: #ffeee8;
 }
 .catalog_container {
+    gap: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -17,3 +18,9 @@
     border-radius: 10px;
     text-align: center;
 }
+
+@media screen and (min-width: 1500px) {
+    .carte-article {
+        max-width: 100%;
+    }
+  }

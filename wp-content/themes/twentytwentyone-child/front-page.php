@@ -25,7 +25,7 @@ $accueil_introduction =  $champs_accueil['accueil_introduction'];
     </div>
     
     <?php if( $accueil_introduction ) : ?>
-            <div class="introduction flex-center-center height30">
+            <div class="introduction flex-center-center height40">
                 <div class="introduction-description"><?php echo $accueil_introduction; ?></div>
             </div>
         <?php endif; ?>
@@ -47,99 +47,74 @@ $the_query = new WP_Query( $args );
 if( $the_query->have_posts() ):
 
 
+/**
+ * Fonction pour afficher les articles d'une catégorie spécifique
+ *
+ * $the_query La requête WP_Query contenant les articles
+ * $categorie Le nom de la catégorie à afficher
+ * $limite Le nombre maximal d'articles à afficher (par défaut 4)
+ */
+
+function afficher_articles_par_categorie($the_query, $categorie, $limite = 4) {
+    $compteur = 0;
+    ?>
+    <section class="height50 flex-col-center-center gap30">
+        <div class="catalog-title structure80">
+            <h2><?php echo $categorie; ?></h2>
+        </div>
+        <div class="catalog_container structure80">
+            <?php
+            // Boucle à travers les articles
+            while( $the_query->have_posts() ) : $the_query->the_post();
+                $articles = get_fields();
+                $article_image = $articles['article_image'];
+                $article_categorie = $articles['article_categorie'];
+                $article_description = $articles['article_description'];
+                $article_prix = $articles['article_prix'];
+                $article_actif = $articles['article_actif'];
+
+                // Afficher les articles appartenant à la catégorie et limiter à $limite articles
+                if (((is_array($article_categorie) && in_array($categorie, $article_categorie)) || $article_categorie === $categorie) && $compteur < $limite) {
+                    $compteur++;
+                    ?>
+                    <div class="carte-article">
+                        <div class="article-image">
+                            <a href="<?php the_permalink(); ?>">
+                                <img src="<?= $article_image; ?>" />
+                            </a>
+                        </div>
+                        <a href="<?php the_permalink(); ?>">
+                            <p class="article-titre"><?php the_title(); ?></p>
+                        </a>
+                    </div>
+                    <?php
+                }
+            endwhile;
+            ?>
+        </div>
+    </section>
+    <?php
+}
 ?>
 
 <main class="accueil-articles-section">
-    <!-- Section Vaisselle -->
-    <section class="height50 flex-col-center-center gap30">
-        <div class="catalog-title structure80">
-            <h2>Vaisselle</h2>
-        </div>
-        <div class="catalog_container structure80">
-            <?php
-            //les variables pour les articles de vaisselle
-            /**
-             * vaissele_aticles_afficher -> Afficher les articles avec la categorie(vaissele)
-             * vaisselle_compteur_afficher -> Pour afficher un nombre limité d'articles 
-             */
-            $vaissele_aticles_afficher = false;
-            $vaisselle_compteur_afficher = 0;
-            // Boucle à travers les articles
-            while( $the_query->have_posts() ) : $the_query->the_post();
-            $articles = get_fields();
-            $article_image = $articles['article_image'];
-            $article_categorie = $articles['article_categorie'];
-            $article_description = $articles['article_description'];
-            $article_prix = $articles['article_prix'];
-            $article_actif = $articles['article_actif'];
+    <?php
+    // Afficher les articles pour la catégorie "Vaisselle"
+    afficher_articles_par_categorie($the_query, 'Vaisselle');
 
-            //Afficher les articles avec la categorie "Vaisselle"
-            if (((is_array($article_categorie) && in_array('Vaisselle', $article_categorie)) || $article_categorie === 'Vaisselle') && $vaisselle_compteur_afficher < 5) {
-                $vaissele_aticles_afficher = true;
-                //compteur jusqu'a 5 articles per ligne
-                $vaisselle_compteur_afficher++;
-            ?>
-        
-            <div class="carte-article">
-                <div class="article-image">
-                    <a href="<?php the_permalink(); ?>">
-                        <img src="<?= $article_image; ?>" />
-                    </a>
-                </div>
-                <a href="<?php the_permalink(); ?>">
-                    <p class="article-titre"><?php the_title(); ?></p>
-                </a>
-            </div>
-            <?php
-            }
-            endwhile;
-            ?>
-        </div>
-    </section>
+    // Réinitialiser le pointeur de boucle pour la prochaine catégorie
+    $the_query->rewind_posts();
 
-    <!-- Section Service -->
-    <section class="height50 flex-col-center-center gap30">
-        <div class="catalog-title structure80">
-            <h2>Service</h2>
-        </div>
-        <div class="catalog_container structure80">
-            <?php
-            $services_aticles_afficher = false;
-            $service_compteur_afficher = 0;
-            while( $the_query->have_posts() ) : $the_query->the_post();
-            $articles = get_fields();
-            $article_image = $articles['article_image'];
-            $article_categorie = $articles['article_categorie'];
-            $article_description = $articles['article_description'];
-            $article_prix = $articles['article_prix'];
-            $article_actif = $articles['article_actif'];
-            //Afficher les articles avec la categorie "Service"
-            if (((is_array($article_categorie) && in_array('Service', $article_categorie)) || $article_categorie === 'Service')&& $service_compteur_afficher < 5) {
-                $services_aticles_afficher = true;
-                $service_compteur_afficher++;
-            ?>
-        
-            <div class="carte-article">
-                <div class="article-image">
-                    <a href="<?php the_permalink(); ?>">
-                        <img src="<?= $article_image; ?>" />
-                    </a>
-                </div>
-                <p class="article-titre"><?php the_title(); ?></p>
-                <div class="link-wrapper">
-                    <a class="link-btn" href="<?php the_permalink(); ?>">Voir plus</a>
-                </div>
-            </div>
-            <?php
-            }
-            endwhile;
-            ?>
-        </div>
-    </section>
+    // Afficher les articles pour la catégorie "Service"
+    afficher_articles_par_categorie($the_query, 'Service');
+    ?>
 </main>
 
+<?php
+endif;
 
-<?php endif; ?>
+
+?>
 <?php wp_reset_query(); 
 
 
